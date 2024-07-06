@@ -1,0 +1,334 @@
+/* CSS Reset */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+
+:root {
+    --blue: #4285F4;
+    --yellow: #F4B400;
+    --red: #DB4437;
+    --green: #0F9D58;
+    --radius: 0.75rem;
+    --h2-font-size: clamp(2rem, 4vw + 1rem, 3rem);
+    --p-font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Product Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#hero-section{
+    margin-bottom: 8rem;
+}
+
+#nav {
+    position: sticky;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+}
+
+#nav > * {
+    text-decoration: none;
+    color: inherit;
+}
+
+#nav > :first-child {
+    margin-right: 3.6rem;
+}
+
+#nav > :last-child {
+    margin-left: 3.6rem;
+}
+#nav > :last-child {
+    color: white;
+    padding: .2em 1em;
+    background-color: var(--blue);
+    border-radius: 10px;
+}
+
+#landing {
+    width: 60%;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    margin-inline: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+#landing > * {
+    text-align: center;
+}
+
+#landing > h1 {
+    /* font-size: 3rem; */
+    font-size: var(--h2-font-size);
+
+}
+
+#landing > p {
+    /* font-size: 1.5rem; */
+    font-size: var(--p-font-size);
+
+}
+
+#landing :last-child {
+    color: white;
+    border: 0;
+    display: flex;
+    width: 13rem;
+    padding: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius);
+    background: var(--yellow);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+#about-section {
+    /* max-width: 90%; */
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-columns: repeat(2, minmax(250px, 1fr)); */
+
+    margin-inline: auto;
+    gap: 1.5rem;
+    margin-bottom: 10rem;
+}
+
+#about-section > * {
+    border-radius: var(--radius);
+}
+
+.grid-item-1 {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+    background-color: var(--red);
+    gap: 2rem;
+}
+
+.grid-item-1 h2 {
+    /* font-size: 2.5rem; */
+    font-size: var(--h2-font-size);
+    line-height: 3rem;
+}
+
+.grid-item-1 p {
+    /* font-size: 1.5rem; */
+    font-size: var(--p-font-size);
+
+}
+
+.grid-item-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid-item-2 img {
+    /* Imma need to fix this later */
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
+
+}
+
+.grid-item-3 {
+    width: max(100%, 600px);
+    height: 100%;
+    object-fit: cover;
+
+}
+.grid-item-4 {
+    width: 100%;
+}
+
+
+.grid-item-5 {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    background-color: var(--blue);
+    font-size: var(--p-font-size);
+    /* font-size: 1.5rem; */
+}
+
+.grid-item-6 {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--green);
+    color: white;
+    font-size: var(--p-font-size);
+    /* font-size: 1.5rem; */
+}
+
+#team-section{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-areas: 
+    "title title title title"
+    "ceo chief1 chief2 chief3"
+    "ceo chief4 chief5 chief6";
+    margin-bottom: 10rem;
+}
+
+
+#team-section > h2 {
+    grid-area: title;
+    font-size: var(--h2-font-size);
+
+}
+
+#team-section > :nth-child(2) {
+    grid-area: ceo;
+    grid-row: 2 / 4;
+    background-color: #0F9D58;
+
+}
+
+#team-section > :nth-child(3) {
+    height: 200px;
+    grid-area: chief1;
+    background-color: #4285F4;
+}
+#team-section > :nth-child(4) {
+    grid-area: chief2;
+    background-color: #4285F4;
+
+}
+#team-section > :nth-child(5) {
+    grid-area: chief3;
+    background-color: #4285F4;
+
+}
+#team-section > :nth-child(6) {
+    height: 200px;
+
+    grid-area: chief4;
+    background-color: #4285F4;
+
+}
+#team-section > :nth-child(7) {
+    grid-area: chief5;
+    background-color: #4285F4;
+
+}
+#team-section > :nth-child(8) {
+    grid-area: chief6;
+    background-color: #4285F4;
+}
+
+
+#community-section {
+    margin-bottom: 10rem;
+}
+
+.post-carousel {
+    display: flex;
+}
+
+#community-section > h2 {
+    font-size: var(--h2-font-size);
+}
+
+#community-section > p {
+    font-size: var(--p-font-size);
+}
+
+/* TESTING RESPONSIVE DESIGN */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border: 1px solid red;
+}
+
+@media (min-width: 320px) {
+    .container {
+        max-width: 320px;
+    }
+    #about-section {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 475px) {
+    .container {
+        max-width: 475px;
+    }
+
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+    #about-section {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
